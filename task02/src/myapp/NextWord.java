@@ -32,7 +32,10 @@ public class NextWord {
 
         String line;
 
-        while ((line = br.readLine()) != null){
+        while ((line = br.readLine()) != null){ 
+            if(line.isEmpty() || line.trim().equals("") || line.trim().equals("\n")){
+                continue;
+            }
             list.add(line);
         }
         br.close();
@@ -44,7 +47,7 @@ public class NextWord {
         List<String> wordList = new LinkedList<>();
 
         for (String line : rawList) {
-            String newLine = line.replaceAll("\\p{Punct}", "");
+            String newLine = line.replaceAll("\\p{Punct}", " ");
             String[] tempArray = newLine.split(" ");
             for (String word : tempArray) {
                 String newWord = word.replaceAll("\\s+","");
@@ -169,7 +172,7 @@ public class NextWord {
     public void print(Map<String,Map<String,Double>> map){
         for(Map.Entry<String, Map<String,Double>> t :map.entrySet()){
             String key = t.getKey();
-            System.out.println(key + "\n");
+            System.out.println(key);
           for (Map.Entry<String,Double> e : t.getValue().entrySet())
             System.out.println("\t" + e.getKey()+ " " +e.getValue());
         }
