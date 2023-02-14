@@ -156,6 +156,9 @@ public class NextWord {
             for (Entry<String,Integer> entry : tempList) {
                 // System.out.println("value >>> " + entry.getValue());
                 total += entry.getValue();
+            }
+            for (Entry<String,Integer> entry : tempList) {
+                // System.out.println("value >>> " + entry.getValue());
                 tempMap.put(entry.getKey(), entry.getValue()/total);
             }
             answerMap.put(key, tempMap);
