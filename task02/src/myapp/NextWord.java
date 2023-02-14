@@ -44,10 +44,11 @@ public class NextWord {
         List<String> wordList = new LinkedList<>();
 
         for (String line : rawList) {
-            String newLine = line.trim().replaceAll("\\p{Punct}", " ");
+            String newLine = line.replaceAll("\\p{Punct}", "");
             String[] tempArray = newLine.split(" ");
             for (String word : tempArray) {
-                wordList.add(word.toLowerCase());
+                String newWord = word.replaceAll("\\s+","");
+                wordList.add(newWord.trim().toLowerCase()); //here
             }
         }
         allWordsList = wordList;
@@ -153,7 +154,7 @@ public class NextWord {
             double total = 0;
             Map<String,Double> tempMap = new HashMap<>();
             for (Entry<String,Integer> entry : tempList) {
-                System.out.println("value >>> " + entry.getValue());
+                // System.out.println("value >>> " + entry.getValue());
                 total += entry.getValue();
                 tempMap.put(entry.getKey(), entry.getValue()/total);
             }
