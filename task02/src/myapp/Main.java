@@ -33,15 +33,6 @@ public class Main {
                 Map<String,Map<String,Double>> finalMap = doc.getSolutionMap(map);
                 doc.print(finalMap);
             }
-
-            // testing for 1st text file
-            // String path1 = dirList.get(0);
-            // NextWord doc1 = new NextWord(path1);
-            // List<String> wordTextData1 = doc1.getWordsFromPhrase();
-            // List<String> list1 = doc1.getUniqueList();
-            // Map<String,Map<String,Integer>> map1 = doc1.getFinalMap();
-            // Map<String,Map<String,Double>> finalMap1 = doc1.getSolutionMap(map1);
-            // doc1.print(finalMap1);
         }
     }
 
