@@ -36,7 +36,7 @@ public class NextWord {
             if(line.isEmpty() || line.trim().equals("") || line.trim().equals("\n")){
                 continue;
             }
-            list.add(line);
+            list.add(line.replaceAll("[^a-zA-Z ]", ""));
         }
         br.close();
         return list;
